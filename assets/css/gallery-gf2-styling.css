@@ -73,30 +73,6 @@ h2 {
     color: var(--clr-warning);
 }
 
-/* TO DO: maybe edit this.
-Currently, there is a footer after an image inside of an article inside of a list item. */
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    height: 100%;
-    background-color: var(--clr-dark);
-
-    color: var(--clr-light);
-    font-size: 1.2rem;
-}
-
-img {
-    width: 100%;
-    object-fit: contain;
-}
-
-article footer {
-    line-height: 2rem;
-    text-align: center;
-}
-
 /* ---------COMPONENT 1: basic composition--------- */
 
 .pageheader {
@@ -129,14 +105,38 @@ main {
     margin-bottom: 4rem;
 }
 
+/* This is a ul element. */
 .inner-grid-container {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    grid-template-rows: 1fr;
-    padding-inline: 0;
-    gap: 4rem;
+    /* Reference: https://medium.com/@algopoint.ltd/how-to-create-a-slideshow-carousel-using-html-css-js-7ab0561b39b3 */
+    display: flex;
+    flex-direction: row; 
     list-style: none;
+    padding-inline: 0;
+    gap: 3.5rem;
+    
+    /* all as in every CSS property 
+    I tried without all, and the scrolling isn't as smooth. 
+    A warning on the use of transition: all ... : 
+    "Being aware of the junk that might get caused by transitioning the wrong set of properties, you might get an idea of why I consider the usage of the all keyword a bad practice. Sure, you can set transition: all .3s ease-out; and still have a well-performing animation if you make sure to only change opacity and transform, but there is a good chance that someone else is going to change a property along the way, without knowing that this will trigger an animation." https://www.pno.dev/articles/dont-use-the-all-keyword-in-css-transitions/ */
+    transition: all .25s ease-in;
+    scroll-behavior: smooth;
+    /* scrollable overflow */
+    overflow: auto;
+    /* "The effect we wanna achieve here is to make sure an item is either entirely inside or outside from the left of the window. (...)
+    For creating a vertical slider you can use scroll-snap-type: y mandatory" https://medium.com/@algopoint.ltd/how-to-create-a-slideshow-carousel-using-html-css-js-7ab0561b39b3 */
+    scroll-snap-type: x mandatory;
 }
+
+
+/* "To hide the scroll but keep the functionality" https://medium.com/@algopoint.ltd/how-to-create-a-slideshow-carousel-using-html-css-js-7ab0561b39b3 */
+.inner-grid-container::-webkit-scrollbar {
+    display: none;
+} 
+.inner-grid-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 
 .slider-button-container {
     display: flex;
@@ -178,23 +178,38 @@ main {
     padding: 8%; 
 }
 
+
+/* Styling of elements created with Javascript */
+
 .inner-grid-container li {
-    display: none;
+    /* "set each image to scroll-snap-align: center to ensure that the snapping centers the image within the carousel." https://web.dev/articles/css-scroll-snap */
+    scroll-snap-align: center;
+    /* The min-width property needs to be there, otherwise all pictures in the array are shown, and the scroll bar/scroll functionality disappears. */
+    min-width: 25vw;
 }
 
-.inner-grid-container li:nth-of-type(1),
-.inner-grid-container li:nth-of-type(2),
-.inner-grid-container li:nth-of-type(3) {
-    display: block;
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+    background-color: var(--clr-dark);
+
+    color: var(--clr-light);
+    font-size: 1.2rem;
 }
 
-/* TO DO: delete when done: Trying to find alternatives to make the JS work. */
-
-.hidden {
-    display: none;
+img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
-/* TO DO: give a style to the footer of the article that matches the recipe intro in the Kryb assignment (white text on a black background). */
+article footer {
+    line-height: 2rem;
+    text-align: center;
+}
 
 /* ---------COMPONENT 2: hover, focus and active effects--------- */
 
