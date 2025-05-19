@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals of the World</title>
+    <link rel="stylesheet" href="assets/css/gallery-gf2-styling.css">
+    <!-- The following style sheet does not exist. I already created a gallery inside of a modal for another assignment, so I am creating sth new in this assignment. 
+    The modal is optional acc. to the instructions. 
+    <link rel="stylesheet" href="assets/css/modal.css">
+    -->
+    <!-- The following Lottie Player contains copyright notices from Microsoft and Google. 
+    Since there are no Lottie files (.lottie) in the materials, this script isn't useful for anything.
+    Note (in case additional materials are provided later): the first Lottie-Player is not defered. 
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    OR
+    <script src="assets/js/lottie-player.js" defer></script>
+    -->
+    <!-- "Multiple SCRIPT Elements
+    An HTML file can and often will have multiple script elements, and the code is all mutually accessible. That means we can have one file define some functions that are called by code in another file." https://cs.wellesley.edu/~cs304node/readings/js/practical.html -->
+    <script src="assets/js/gallery-gf2-script.js" defer></script>
+</head>
+
+<body>
+    <header class="pageheader">
+        <hgroup>
+            <h1>Animals of the World</h1>
+            <p>A Gallery of Fantastic Animals</p>
+        </hgroup>
+    </header>
+    <main class="wrapper">
+        <section>
+            <h2>Image Viewer</h2>
+            <p class="warning"><strong>Work in progress:</strong> I know! This doesn't work yet. It looks great, though, doesn't it?</p>
+            <div class="slider-container">
+                <div class="slider-button-container">
+                    <button id="leftButton" class="round-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+                    </button>
+                </div>
+                <ul id="sliderApp" class="inner-grid-container">
+                    <!-- TO DO: figure out a way to show only 3 pictures at a time) 
+                    <li id="cardOne">
+                    </li>
+                    <li id="cardTwo">
+                    </li>
+                    <li id="cardThree">
+                    </li>
+                    <li id="card-1">
+                        <article>Card 1</article>
+                    </li>
+                    <li id="card-2">
+                        <article>Card 2</article>
+                    </li>
+                    <li id="card-3">
+                        <article>Card 3</article>
+                    </li>
+                    -->
+                </ul>
+                <div class="slider-button-container slider-button-container-right">
+                    <button id="rightButton" class="round-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="pagefooter">
+        <p>© Boilerplate by Bo Nicolaisen, teacher; code by Marie-Pierre Lessard.</p>
+    </footer>
+</body>
+
+</html>
